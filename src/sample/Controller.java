@@ -20,7 +20,7 @@ public class Controller implements VendingMachine {
     private Calculator calculator=new Calculator();
 
     @FXML
-    private Label productLabel,productNameLabel,priceLabel,messageLabel;
+    private Label productIdLabel,productNameLabel, productPriceLabel,messageLabel;
     @FXML
     private GridPane gridPane;
     @FXML
@@ -39,11 +39,6 @@ public class Controller implements VendingMachine {
     private VBox numberVbox;
 
     static ArrayList<Label>   labelsArrayList=new ArrayList<>();
-
-
-
-
-
 
 
     public void getLetter(ActionEvent event){
@@ -103,15 +98,9 @@ public class Controller implements VendingMachine {
         Products.productsArrayList.add(product4);
         Products.productsArrayList.add(product5);
 
-        for (int i=0;i< Products.productsArrayList.size();i++){
-           for (int j=0;j<labelsArrayList.size();j++){
-
-               if (Products.productsArrayList.get(i).getProductId().equals(labelsArrayList.get(j).getId())){
-                   labelsArrayList.get(j).setText(Products.productsArrayList.get(i).getName());
-               }
-
-           }
-       }
+        for (int i=0;i<Products.productsArrayList.size();i++){
+            labelsArrayList.get(i).setText(Products.productsArrayList.get(i).getName());
+        }
 
     }
 
@@ -120,11 +109,12 @@ public class Controller implements VendingMachine {
     public void selectProduct(ActionEvent event){
 
         for (int i=0;i<labelsArrayList.size();i++){
-            if (Products.productsArrayList.get(i).getProductId().equals(productId.toString())){
-                productLabel.setText(Products.productsArrayList.get(i).getProductId());
+
+                if(labelsArrayList.get(i).getId().equals(productId.toString())){
+                productIdLabel.setText(productId.toString());
                 productNameLabel.setText(Products.productsArrayList.get(i).getName());
                 String priceString="$"+Double.toString(Products.productsArrayList.get(i).getPrice());
-                priceLabel.setText(priceString);
+                productPriceLabel.setText(priceString);
 
                 selectedProduct=Products.productsArrayList.get(i);
                 if (selectedProduct.getAmount()!=0){
@@ -173,6 +163,12 @@ public class Controller implements VendingMachine {
     public void displayChangeMessage(ActionEvent event){
         billsField.setText("");
         messageLabel.setText(changeMess);
+
+
+
+        RenewMenu rMenu=new RenewMenu();
+        rMenu.resizeMenu(gridPane,4,8);
+        rMenu.insertNewProducts(Products.productsArrayList,labelsArrayList);
 
     };
 

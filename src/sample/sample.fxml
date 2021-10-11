@@ -223,7 +223,7 @@
                   <Label fx:id="E5" prefHeight="18.0" prefWidth="110.0" textFill="#eae3e3" GridPane.columnIndex="5" GridPane.rowIndex="5" />
                </children>
             </GridPane>
-            <Label fx:id="productLabel" alignment="CENTER" contentDisplay="TOP" prefHeight="32.0" prefWidth="337.0" style="-fx-background-color: #d8d8d8; -fx-font-weight: bold;" text="Product Id" textFill="#7cacf2">
+            <Label fx:id="productIdLabel" alignment="CENTER" contentDisplay="TOP" prefHeight="32.0" prefWidth="337.0" style="-fx-background-color: #d8d8d8; -fx-font-weight: bold;" text="Product Id" textFill="#7cacf2">
                <font>
                   <Font size="18.0" />
                </font>
@@ -233,7 +233,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="priceLabel" alignment="CENTER" prefHeight="18.0" prefWidth="337.0" style="-fx-background-color: #d8d8d8; -fx-font-weight: bold;" text="Price" textFill="#7cacf2">
+            <Label fx:id="productPriceLabel" alignment="CENTER" prefHeight="18.0" prefWidth="337.0" style="-fx-background-color: #d8d8d8; -fx-font-weight: bold;" text="Price" textFill="#7cacf2">
                <font>
                   <Font size="18.0" />
                </font>
