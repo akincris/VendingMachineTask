@@ -1,4 +1,4 @@
-#Vending Machine Software
+# Vending Machine Software
 
   This is a Java based software designed to run on a Vending machine. The moment
 a consumer enters a selection using buttons,it will report the selected product Id,name and price.
@@ -10,7 +10,7 @@ Almost all the methods are called from the Controller class using buttons and la
 will be made using an Calculator object and BillEnter class which is helping calculating the entered balance.We also have Bills enum for representing the US dollars and their values.The passed string of entered bills is converted to a double array and passed for calculations. The Product class though creates objects for our vending machine with their uniq name,ID,amount and price. I've also used labelsArrayList and productsArrayList for storing labels and products from the menu.
 
 
-##Instructions
+## Instructions
 
   1.First of all click the "*START*" button above to display the product menu.
 
