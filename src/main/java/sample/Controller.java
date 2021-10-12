@@ -1,4 +1,4 @@
-package sample;
+package main.java.sample;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -32,7 +32,7 @@ public class Controller implements VendingMachine {
     @FXML
     private ToggleGroup letter,number;
     @FXML
-    private Button loadingOptions,btnOk,enterBillsButton, payButton;
+    private Button loadingOptions,btnOk,enterBillsButton, payButton,loadButton;
     @FXML
     private TextField billsField;
     @FXML
@@ -86,11 +86,11 @@ public class Controller implements VendingMachine {
  labelsArrayList.add(A3);
  labelsArrayList.add(B3);
  labelsArrayList.add(D5);
-        Products product1=new Products("doritos","A1",1,2.30);
-        Products product2=new Products("pringles","A2",10,1.50);
-        Products product3=new Products("cheetos","A3",10,1.90);
-        Products product4=new Products("kitkat","B3",10,3.50);
-        Products product5=new Products("oreo","D5",0,1.70);
+        Products product1=new Products("doritos",1,2.30);
+        Products product2=new Products("pringles",10,1.50);
+        Products product3=new Products("cheetos",10,1.90);
+        Products product4=new Products("kitkat",10,3.50);
+        Products product5=new Products("oreo",0,1.70);
 
         Products.productsArrayList.add(product1);
         Products.productsArrayList.add(product2);
@@ -164,13 +164,15 @@ public class Controller implements VendingMachine {
         billsField.setText("");
         messageLabel.setText(changeMess);
 
-
-
-        RenewMenu rMenu=new RenewMenu();
-        rMenu.resizeMenu(gridPane,4,8);
-        rMenu.insertNewProducts(Products.productsArrayList,labelsArrayList);
-
     };
+
+    @Override
+    public void loadingNewOptions(ActionEvent event){
+        ReadNewProducts.readFromJsonFile("input.json",Products.productsArrayList);
+        RenewMenu rMenu=new RenewMenu();
+        rMenu.resizeMenu(gridPane,ReadNewProducts.rows,ReadNewProducts.columns);
+        rMenu.insertNewProducts(Products.productsArrayList,labelsArrayList);
+    }
 
 
 

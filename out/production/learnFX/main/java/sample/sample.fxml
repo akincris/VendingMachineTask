@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="696.0" prefWidth="910.0" style="-fx-background-color: #383838;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="696.0" prefWidth="910.0" style="-fx-background-color: #383838;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.sample.Controller">
    <top>
       <Label style="-fx-font-weight: bold; -fx-font-size: 40;" text="Vending Machine" textFill="#d4cccc" BorderPane.alignment="CENTER" />
    </top>
@@ -263,7 +263,7 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="42.0" prefWidth="168.0" style="-fx-background-color: #7cacf2; -fx-font-weight: bold;" text="Loading New Options" textFill="#fff9f9">
+                  <Button fx:id="loadButton" alignment="CENTER" mnemonicParsing="false" onAction="#loadingNewOptions" prefHeight="42.0" prefWidth="168.0" style="-fx-background-color: #7cacf2; -fx-font-weight: bold;" text="Loading New Options" textFill="#fff9f9">
                      <font>
                         <Font size="14.0" />
                      </font>

@@ -1,20 +1,18 @@
-package sample;
+package main.java.sample;
 
 import java.util.ArrayList;
 
 public class Products {
 
     private String name;
-    private String productId;
     private int amount;
     private double price;
 
     static ArrayList<Products> productsArrayList=new ArrayList<>();
 
 
-    Products(String name, String productId,int amount,double price){
+    Products(String name,int amount,double price){
         this.name=name;
-        this.productId=productId;
         this.amount=amount;
         this.price=price;
     }
@@ -24,9 +22,7 @@ public class Products {
         return name;
     }
 
-    public String getProductId(){
-        return productId;
-    }
+
     public int getAmount(){
 
         return amount;
@@ -38,10 +34,6 @@ public class Products {
 
     public void setName(String name){
         this.name=name;
-    }
-
-    public void setProductId(String productId){
-        this.productId=productId;
     }
 
     public void setAmount(int amount){
